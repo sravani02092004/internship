@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging Platform - Home</title>
+    <link rel="stylesheet" href="{% static 'blogapp/admin-style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>All Blog Posts</h1>
+    </header>
+    <nav class="uff">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Latest Posts</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="blog-posts">
+            {% for post in posts %}
+                <article class="post">
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.content|truncatewords:20 }}</p>
+                    <small>Posted on: {{ post.date_posted }}</small>
+                </article>
+            {% empty %}
+                <p>No posts yet. Stay tuned!</p>
+            {% endfor %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Blog Platform</p>
+    </footer>
+</body>
+</html>
+

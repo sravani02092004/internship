@@ -1,0 +1,104 @@
+/* General Layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #104595;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #4a90e2;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Content */
+h2 {
+    color: #178e0e;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #4a90e2;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #35b840;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    background-color: #1d7a25;
+}
+.uff{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,60 @@
+{% load static %}  <!-- Load static files -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>  
+    <link rel="stylesheet" href="{% static 'blogapp/style.css' %}"> <!-- Link CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'post_list' %}">🏠 Home</a> | 
+            <a href="{% url 'post_create' %}">➕ Create Post</a>
+        </nav>
+    </header>
+
+    <main class="mains"> 
+        <article>
+            <h2>{{ post.title }}</h2>  
+            <p><strong>Published on:</strong> {{ post.created_at }}</p>  
+            <p>{{ post.content }}</p>  
+        </article>
+
+        <section class="comments">
+            <h3>Comments</h3>
+            <ul>
+                {% for comment in comments %}
+                    <li>
+                        <strong>{{ comment.author }}</strong>: {{ comment.text }}
+                        <!-- Delete button for each comment -->
+                        <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                    </li>
+                {% empty %}
+                    <li>No comments yet. Be the first to comment!</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="comment-form">
+            <h3>Leave a Comment</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="author">Your Name:</label><br>
+                <input type="text" id="author" name="author" required><br>
+            
+                <label for="text">Your Comment:</label><br>
+                <textarea id="text" name="text" required></textarea><br>
+            
+                <button type="submit">Submit</button>
+            </form>
+            
+        </section>
+    </main>
+    
+    <footer class="foot">
+        <p>&copy; 2025 Blog Platform</p>  
+    </footer>
+</body>
+</html>

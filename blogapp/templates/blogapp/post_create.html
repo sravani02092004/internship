@@ -1,0 +1,52 @@
+{% load static %}  <!-- Load static files -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Post</title>
+    <link rel="stylesheet" href="{% static 'blogapp/style.css' %}"> <!-- Link CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'post_list' %}">🏠 Home</a>
+           
+        </nav>
+    </header>
+
+    {% comment %} <main class="create">
+        <h2>Create a New Blog Post</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="title">Title:</label><br>
+            <input type="text" name="title" required><br>
+
+            <label for="content">Content:</label><br>
+            <textarea name="content" required></textarea><br>
+
+            <button type="submit">Publish</button>
+        </form>
+    </main> {% endcomment %}
+    <main class="create">
+        <h2>Create a New Blog Post</h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br>
+    
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" required></textarea><br>
+    
+            <button type="submit">Publish</button>
+        </form>
+    </main>
+    
+    <footer id="p">
+        <p>&copy; 2025 Blog Platform</p>
+    </footer>
+</body>
+</html>
+
